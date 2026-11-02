@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İletişim — TOTEM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-sayfa="iletisim">
+
+  <main>
+    <section class="sayfa-bas">
+      <div class="kap">
+        <span class="ust-baslik">İletişim</span>
+        <h1>Merhaba de</h1>
+        <p>Sipariş, isim baskısı, kurumsal hediye ya da sadece bir soru: sana yardımcı olmaktan mutluluk duyarız.</p>
+      </div>
+    </section>
+
+    <section class="kap">
+      <div class="iletisim-kartlar" id="iletisim-kartlar"></div>
+    </section>
+
+    <section class="bolum">
+      <div class="kap">
+        <div class="bolum-baslik">
+          <span class="ust-baslik">Hızlı mesaj</span>
+          <h2>Mesajını yaz, WhatsApp'ta açalım</h2>
+          <p class="soluk">Gönder'e bastığında mesajın WhatsApp'ta hazır olarak açılır.</p>
+        </div>
+        <form class="form" id="mesaj-formu">
+          <label>Adın
+            <input id="f-ad" type="text" autocomplete="name">
+          </label>
+          <label>Mesajın
+            <textarea id="f-mesaj" placeholder="Örn. Adaçayı renginde 2 adet ajanda, kapakta baş harflerim olsun."></textarea>
+          </label>
+          <div style="text-align:center;margin-top:12px"><button class="dugme" type="submit">WhatsApp'ta aç</button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/ayarlar.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>

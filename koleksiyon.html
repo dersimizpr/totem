@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Koleksiyon — TOTEM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-sayfa="koleksiyon">
+
+  <main>
+    <section class="sayfa-bas">
+      <div class="kap">
+        <span class="ust-baslik">Koleksiyon</span>
+        <h1>Tüm ürünler</h1>
+        <p>2027 ajandası ve onu tamamlayan yazı gereçleri. Sipariş ve fiyat bilgisi için ürün sayfasından WhatsApp'a yazabilirsin.</p>
+      </div>
+    </section>
+
+    <section class="kap" style="padding-bottom:clamp(64px,10vw,128px)">
+      <div class="filtre" role="tablist">
+        <button data-kat="tumu">Tümü</button>
+        <button data-kat="ajanda">Ajanda</button>
+        <button data-kat="aksesuar">Aksesuarlar</button>
+      </div>
+      <div class="izgara" id="urun-izgara"></div>
+    </section>
+  </main>
+
+  <script src="assets/ayarlar.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>

@@ -342,3 +342,68 @@ em { font-family: var(--serif); font-style: italic; font-size: 1.08em; }
   .sss summary { font-size: 1.2rem; }
   .duyuru { font-size: .68rem; letter-spacing: .06em; }
 }
+
+/* ---------------- Sürprizler (surpriz.js) ---------------- */
+.surpriz-tuval { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 80; }
+.surpriz-hero { cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.surpriz-hero svg { transform-origin: 50% 50%; will-change: transform; }
+.surpriz-hero.altin svg { filter: drop-shadow(0 18px 30px rgba(201, 160, 78, .35)); }
+
+.surpriz-bildirim {
+  position: fixed; left: 50%; bottom: 24px; z-index: 90;
+  transform: translate(-50%, 140%); opacity: 0;
+  background: var(--yazi); color: var(--krem);
+  padding: 14px 22px; max-width: min(420px, calc(100vw - 32px)); width: max-content;
+  box-shadow: 0 12px 32px rgba(43, 38, 34, .25);
+  text-align: center; pointer-events: none;
+  transition: transform .5s cubic-bezier(.2, .9, .3, 1.2), opacity .4s;
+}
+.surpriz-bildirim.acik { transform: translate(-50%, 0); opacity: 1; }
+.surpriz-bildirim strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.35rem; line-height: 1.2; }
+.surpriz-bildirim span { display: block; font-size: .85rem; color: #CFC5B8; margin-top: 2px; }
+.surpriz-bildirim.altin { background: linear-gradient(120deg, #9C7330, #C9A04E 45%, #E8C877 70%, #B8893B); color: #2B2622; }
+.surpriz-bildirim.altin span { color: #3E2E14; }
+
+@keyframes surprizSars {
+  0%, 100% { transform: none; }
+  15% { transform: translate(-6px, 3px) rotate(-.4deg); }
+  30% { transform: translate(5px, -4px) rotate(.4deg); }
+  45% { transform: translate(-4px, 2px); }
+  60% { transform: translate(3px, -2px); }
+  80% { transform: translate(-1px, 1px); }
+}
+.surpriz-sars { animation: surprizSars .55s ease; }
+
+.surpriz-murekkep {
+  position: fixed; inset: 0; z-index: 85; display: grid; place-items: center; padding: 16px;
+  background: rgba(43, 38, 34, .55); backdrop-filter: blur(4px);
+  opacity: 0; transition: opacity .45s;
+}
+.surpriz-murekkep.acik { opacity: 1; }
+.murekkep-kagit {
+  background: var(--beyaz); width: min(560px, 100%); padding: clamp(28px, 6vw, 56px) clamp(20px, 5vw, 48px);
+  text-align: center; box-shadow: 0 30px 60px rgba(0, 0, 0, .25);
+  transform: translateY(24px) rotate(-1.5deg); transition: transform .6s cubic-bezier(.2, .9, .3, 1.2);
+  background-image: repeating-linear-gradient(transparent 0 31px, rgba(169, 132, 95, .14) 31px 32px);
+}
+.surpriz-murekkep.acik .murekkep-kagit { transform: none; }
+.murekkep-kagit svg { width: 100%; height: auto; margin: 8px 0 12px; }
+.murekkep-kagit svg text {
+  font-family: var(--serif); font-style: italic; font-size: 64px;
+  fill: transparent; stroke: var(--yazi); stroke-width: .9;
+  stroke-dasharray: 600; stroke-dashoffset: 600;
+}
+.surpriz-murekkep.acik svg text { animation: murekkepCiz 1.6s ease forwards; }
+.surpriz-murekkep.acik svg text + text { animation-delay: .7s; }
+@keyframes murekkepCiz {
+  70% { stroke-dashoffset: 0; fill: transparent; }
+  100% { stroke-dashoffset: 0; fill: var(--yazi); }
+}
+.murekkep-kagit p { color: var(--yazi-soluk); }
+@media (prefers-reduced-motion: reduce) {
+  .murekkep-kagit svg text { stroke-dashoffset: 0; fill: var(--yazi); animation: none !important; }
+}
+@media (max-width: 520px) {
+  .surpriz-bildirim { bottom: 90px; }
+  .murekkep-kagit svg text { font-size: 72px; }
+}
